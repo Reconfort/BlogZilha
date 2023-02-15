@@ -6,7 +6,7 @@
       "title": "Reconfort Daniel (Blog and News App) API",
       "description": "API for the  building mobile app by <b>Reconfort's Daniel</b> using NodeJS."
     },
-    "host": "localhost:5001",
+    "host": "localhost:5000",
     "basePath": "/",
     "tags": [
       {
