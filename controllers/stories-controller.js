@@ -63,12 +63,16 @@ const updateOne = async(req, res) => {
     }
 };
 
+
+
+
+
+
 const getAll = async(req, res) => {
     try {
         const [results, itemCount] = await
         Promise.all([
             Story.find({}) 
-                .populate("categoy", "title")
                 .sort({createdAt: -1})
                 .limit(req.query.limit)
                 .skip(req.skip)
@@ -94,6 +98,8 @@ const getAll = async(req, res) => {
     }
 };
 
+
+
 const getOne = async(req, res) => {
     try {
         let item = await Story.findByIdAndUpdate(req.params.id, {
@@ -118,7 +124,6 @@ const getOne = async(req, res) => {
 const getTopStories = async(req, res) => {
     try {
         let result = await Story.find({}) 
-                .populate("category", "title")
                 .sort({ viewsCount: -1})
                 .limit(3)
                 .lean()
